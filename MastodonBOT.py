@@ -55,12 +55,12 @@ uc_client_secret = get_parameter("uc_client_secret", secrets_filepath)
 uc_access_token  = get_parameter("uc_access_token",  secrets_filepath)
 
 
-# Initialise Mastodon API
+# Initialise Mastodon API (change mastodon_hostname to your mastodon instance)
 mastodon = Mastodon(
     client_id = uc_client_id,
     client_secret = uc_client_secret,
     access_token = uc_access_token,
-    api_base_url = 'https://' + mastodon_hostname,
+    api_base_url = 'https://mastodon_hostname',
 )
 
 # Initialise access headers
