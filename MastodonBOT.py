@@ -54,9 +54,6 @@ uc_client_id     = get_parameter("uc_client_id",     secrets_filepath)
 uc_client_secret = get_parameter("uc_client_secret", secrets_filepath)
 uc_access_token  = get_parameter("uc_access_token",  secrets_filepath)
 
-# Load configuration from config file
-config_filepath = "config.txt"
-mastodon_hostname = get_parameter("mastodon_hostname", config_filepath) # E.g., mastodon.social
 
 # Initialise Mastodon API
 mastodon = Mastodon(
@@ -70,4 +67,4 @@ mastodon = Mastodon(
 headers={ 'Authorization': 'Bearer %s'%uc_access_token }
 
 #Writing a post: status is the variable for the toot 
-Mastodon.status_post(status, in_reply_to_id=None, media_ids=None, sensitive=False, visibility='public', spoiler_text=None)
+Mastodon.status_post(status='I love to sp@m with my t00ts... *__*', in_reply_to_id=None, media_ids=None, sensitive=False, visibility='public', spoiler_text=None)
